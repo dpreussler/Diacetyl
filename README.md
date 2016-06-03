@@ -26,21 +26,41 @@ testCompile 'de.jodamob.android:Diacetyl:0.5'
 Example:
 ========
 ```java
-class MyActivtiy {
+class MyButterKnifeActivtiy {
 ...
 @Bind TextView textView;
 @Bind EditText editText;
 ...
 
-class MyActivityTest {
+class MyButterKnifeActivtiyTest {
 
   @Test 
   public void test() {
- 	 MyActity tested = new MyActity();
-	 Diacetyl.butterForTest(tested);
+ 	 MyButterKnifeActivtiy tested = new MyButterKnifeActivtiy();
+	 Diacetyl.butterForTests(tested);
 ```
 
+
+You can pass multiple classes into, for viewholder for example.
+```java
+	 Diacetyl.butterForTests(viewHolder1, viewHolder2);
+```
+
+
+
+It tries to use mockitoid mocks if available else simple mocks.
+The list of supported views is still limited
+
+
+TODO:
+=====
+* tests
+* more views
+* generic view
+* performance measurements and maybe optimization
+
+
 Licensed under Apache 2.0
-(c) 2015 Danny Preussler
+(c) 2016 Danny Preussler
 
 Uses SuperReflect based on jOOR, 2011-2013, Lukas Eder, lukas.eder@gmail.com

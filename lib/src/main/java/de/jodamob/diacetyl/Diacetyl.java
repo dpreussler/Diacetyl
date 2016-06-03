@@ -1,5 +1,6 @@
 package de.jodamob.diacetyl;
 
+import static de.jodamob.mockitoid.AndroidMocks.mockAutoCompleteEditField;
 import static de.jodamob.mockitoid.AndroidMocks.mockButton;
 import static de.jodamob.mockitoid.AndroidMocks.mockEditField;
 import static de.jodamob.mockitoid.AndroidMocks.mockImageButton;
@@ -10,12 +11,19 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import android.content.res.Resources;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
@@ -68,14 +76,28 @@ public class Diacetyl {
             return mockTextView(resources);
         } else if (fieldType.isAssignableFrom(EditText.class)) {
             return mockEditField("");
+        } else if (fieldType.isAssignableFrom(AutoCompleteTextView.class)) {
+            return mockAutoCompleteEditField("");
         } else if (fieldType.isAssignableFrom(Button.class)) {
             return mockButton();
         } else if (fieldType.isAssignableFrom(ImageButton.class)) {
             return mockImageButton();
+        } else if (fieldType.isAssignableFrom(CheckBox.class)) {
+            return mock(CheckBox.class);
         } else if (fieldType.isAssignableFrom(WebView.class)) {
             return mock(WebView.class);
         } else if (fieldType.isAssignableFrom(ProgressBar.class)) {
             return mock(ProgressBar.class);
+        } else if (fieldType.isAssignableFrom(RecyclerView.class)) {
+            return mock(RecyclerView.class);
+        } else if (fieldType.isAssignableFrom(CardView.class)) {
+            return mock(CardView.class);
+        } else if (fieldType.isAssignableFrom(LinearLayout.class)) {
+            return mock(LinearLayout.class);
+        } else if (fieldType.isAssignableFrom(RelativeLayout.class)) {
+            return mock(RelativeLayout.class);
+        } else if (fieldType.isAssignableFrom(FrameLayout.class)) {
+            return mock(FrameLayout.class);
         } else if (fieldType.isAssignableFrom(View.class)) {
             View view = mockView();
             when(view.getResources()).thenReturn(resources);
