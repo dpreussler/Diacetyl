@@ -27,12 +27,13 @@ class MyButterKnifeActivtiyTest {
 	 Diacetyl.butterForTests(tested);
 ```
 
- Diacetyl initializes any android view for a given class with a Mock.
+ Diacetyl initializes any android view found as a field for a given class with a Mock.
  There is no need to run Butterknife logic.
- It will use mocktoid mocks if available else simple mockito mocks
+ It will use mocktoid mocks if available else simple mockito mocks.
+ It will look into parent classes too.
+ It will ignore fields that already have a value.
+ It is not bound to Butterknife, it does not check for annotations and is not looking into your layouts.
 
- It will ignore fields that already have a value
- It is not bound to Butterknife, it does not check for annotations.
 
 You can pass multiple classes into, for viewholder for example.
 ```java
@@ -40,15 +41,23 @@ You can pass multiple classes into, for viewholder for example.
 ```
 
 Gradle
-======
+------
 
 ```groovy
-testCompile 'de.jodamob.android:Diacetyl:0.5'
+repositories {
+    ...
+    maven { url 'https://oss.sonatype.org/content/repositories/staging/'}
+}
+...
+
+dependencies {
+    testCompile 'de.jodamob.android:Diacetyl:0.5'
+}
 
 ```
 
 Todo
-=====
+-------
 * performance measurements and maybe optimization
 
 
