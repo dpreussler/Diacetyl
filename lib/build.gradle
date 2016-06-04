@@ -39,7 +39,7 @@ android {
 dependencies {
     compile 'de.jodamob.android:SuperReflect:1.0'
     compile 'org.mockito:mockito-all:1.9.5'
-    compile 'de.jodamob.android:mockitoid:0.5'
+    compile 'de.jodamob.android:mockitoid:0.6'
     compile 'com.android.support:recyclerview-v7:23.2.1'
     compile 'com.android.support:cardview-v7:23.2.1'
     testCompile 'junit:junit:4.12'

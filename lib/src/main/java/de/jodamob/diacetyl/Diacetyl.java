@@ -2,13 +2,20 @@ package de.jodamob.diacetyl;
 
 import static de.jodamob.mockitoid.AndroidMocks.mockAutoCompleteEditField;
 import static de.jodamob.mockitoid.AndroidMocks.mockButton;
-import static de.jodamob.mockitoid.AndroidMocks.mockEditField;
+import static de.jodamob.mockitoid.AndroidMocks.mockCardView;
+import static de.jodamob.mockitoid.AndroidMocks.mockCheckBox;
+import static de.jodamob.mockitoid.AndroidMocks.mockEditText;
+import static de.jodamob.mockitoid.AndroidMocks.mockFrameLayout;
 import static de.jodamob.mockitoid.AndroidMocks.mockImageButton;
+import static de.jodamob.mockitoid.AndroidMocks.mockLinearLayout;
+import static de.jodamob.mockitoid.AndroidMocks.mockProgressBar;
+import static de.jodamob.mockitoid.AndroidMocks.mockRecyclerView;
+import static de.jodamob.mockitoid.AndroidMocks.mockRelativeLayout;
 import static de.jodamob.mockitoid.AndroidMocks.mockResources;
 import static de.jodamob.mockitoid.AndroidMocks.mockTextView;
 import static de.jodamob.mockitoid.AndroidMocks.mockView;
+import static de.jodamob.mockitoid.AndroidMocks.mockWebView;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import android.content.res.Resources;
 import android.support.v7.widget.CardView;
@@ -75,7 +82,7 @@ public class Diacetyl {
         if (fieldType.isAssignableFrom(TextView.class)) {
             return mockTextView(resources);
         } else if (fieldType.isAssignableFrom(EditText.class)) {
-            return mockEditField("");
+            return mockEditText("");
         } else if (fieldType.isAssignableFrom(AutoCompleteTextView.class)) {
             return mockAutoCompleteEditField("");
         } else if (fieldType.isAssignableFrom(Button.class)) {
@@ -83,27 +90,28 @@ public class Diacetyl {
         } else if (fieldType.isAssignableFrom(ImageButton.class)) {
             return mockImageButton();
         } else if (fieldType.isAssignableFrom(CheckBox.class)) {
-            return mock(CheckBox.class);
+            return mockCheckBox();
         } else if (fieldType.isAssignableFrom(WebView.class)) {
-            return mock(WebView.class);
+            return mockWebView();
         } else if (fieldType.isAssignableFrom(ProgressBar.class)) {
-            return mock(ProgressBar.class);
+            return mockProgressBar();
         } else if (fieldType.isAssignableFrom(RecyclerView.class)) {
-            return mock(RecyclerView.class);
+            return mockRecyclerView();
         } else if (fieldType.isAssignableFrom(CardView.class)) {
-            return mock(CardView.class);
+            return mockCardView();
         } else if (fieldType.isAssignableFrom(LinearLayout.class)) {
-            return mock(LinearLayout.class);
+            return mockLinearLayout();
         } else if (fieldType.isAssignableFrom(RelativeLayout.class)) {
-            return mock(RelativeLayout.class);
+            return mockRelativeLayout();
         } else if (fieldType.isAssignableFrom(FrameLayout.class)) {
-            return mock(FrameLayout.class);
+            return mockFrameLayout();
         } else if (fieldType.isAssignableFrom(View.class)) {
-            View view = mockView();
-            when(view.getResources()).thenReturn(resources);
+            View view = mockView(resources);
             return view;
+        } else {
+            // unknown or custom views
+            return mock(fieldType);
         }
-        return null;
     }
 
     private void tryToSet(SuperReflect reflector, Field field, Object mock) {
