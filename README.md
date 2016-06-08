@@ -27,12 +27,14 @@ class MyButterKnifeActivtiyTest {
 	 Diacetyl.butterForTests(tested);
 ```
 
- Diacetyl initializes any android view found as a field for a given class with a Mock.
+ Diacetyl initializes any android view found as a field for a given class with a mockito mock.
+
  * There is no need to run Butterknife logic.
- * It will use [mockitoid](https://github.com/dpreussler/mockitoid) mocks (mockito mocks with some enhancements) if available  else simple [mockito](https://github.com/mockito/mockito) mocks.
  * It will look into parent classes too.
+ * It will mock custom views too
  * It will ignore fields that already have a value.
  * It is not bound to Butterknife, it does not check for annotations and is not looking into your layouts.
+ * It will use [mockitoid](https://github.com/dpreussler/mockitoid) mocks (mockito mocks with some enhancements) if available  else simple [mockito](https://github.com/mockito/mockito) mocks.
 
 
 You can pass multiple classes into, for viewholder for example.
