@@ -51,7 +51,7 @@ repositories {
 ...
 
 dependencies {
-    testCompile 'de.jodamob.android:diacetyl:0.5'
+    testCompile 'de.jodamob.android:diacetyl:0.5.1'
 }
 
 ```
