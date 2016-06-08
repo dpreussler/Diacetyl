@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/dpreussler/Diacetyl.svg?branch=master)](https://travis-ci.org/dpreussler/Diacetyl)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.jodamob.android/Diacetyl/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.jodamob.android/Diacetyl)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.jodamob.android/diacetyl/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.jodamob.android/diacetyl)
 
 
 Diacetyl
@@ -29,7 +29,7 @@ class MyButterKnifeActivtiyTest {
 
  Diacetyl initializes any android view found as a field for a given class with a Mock.
  * There is no need to run Butterknife logic.
- * It will use [mockitoid mocks](https://github.com/dpreussler/mockitoid) (mockito mocks with some enhancements) if available  else simple [mockito](https://github.com/mockito/mockito) mocks.
+ * It will use [mockitoid](https://github.com/dpreussler/mockitoid) mocks (mockito mocks with some enhancements) if available  else simple [mockito](https://github.com/mockito/mockito) mocks.
  * It will look into parent classes too.
  * It will ignore fields that already have a value.
  * It is not bound to Butterknife, it does not check for annotations and is not looking into your layouts.
@@ -51,7 +51,7 @@ repositories {
 ...
 
 dependencies {
-    testCompile 'de.jodamob.android:Diacetyl:0.5'
+    testCompile 'de.jodamob.android:diacetyl:0.5'
 }
 
 ```
