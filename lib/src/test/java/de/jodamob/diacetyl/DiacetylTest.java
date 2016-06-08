@@ -12,26 +12,24 @@ import org.junit.Test;
 
 public class DiacetylTest {
 
-    Diacetyl tested = new Diacetyl();
     TestClass exampleClass = new TestClass();
 
     @Test
     public void should_fill_views() {
-
-        tested.bindForTests(exampleClass);
+        Diacetyl.butterForTests(exampleClass);
         assertThat(exampleClass.normalView).isNotNull();
         assertThat(exampleClass.supportView).isNotNull();
     }
 
     @Test
     public void should_fill_custom_views() {
-        tested.bindForTests(exampleClass);
+        Diacetyl.butterForTests(exampleClass);
         assertThat(exampleClass.customView).isNotNull();
     }
 
     @Test
     public void should_not_remove_pre_filled_views() {
-        tested.bindForTests(exampleClass);
+        Diacetyl.butterForTests(exampleClass);
         assertThat(exampleClass.nonNulView.getText()).isEqualTo("preset");
     }
 
