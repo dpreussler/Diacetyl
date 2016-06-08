@@ -52,7 +52,7 @@ public class Diacetyl {
         }
     }
 
-    public void bindForTests(Object instanceWithViews) {
+    private void bindForTests(Object instanceWithViews) {
         SuperReflect reflector = SuperReflect.on(instanceWithViews);
         Class<?> instanceWithViewsClass = instanceWithViews.getClass();
         do {

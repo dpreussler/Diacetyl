@@ -7,7 +7,7 @@ Diacetyl
  Diacetyl ... is added to some foods to impart its buttery flavor.
  (source: wikipedia)
 
- It adds artifical butterflavor to your Butterknife in test environments.
+ It adds artifical butterflavor to your [Butterknife](https://github.com/JakeWharton/butterknife) in test environments.
  When running unit tests you don't need to run Butterknife or similar as this
  might need real views which leads to the use of Robolectric or similar.
 
@@ -29,7 +29,7 @@ class MyButterKnifeActivtiyTest {
 
  Diacetyl initializes any android view found as a field for a given class with a Mock.
  * There is no need to run Butterknife logic.
- * It will use mocktoid mocks if available else simple mockito mocks.
+ * It will use [mockitoid mocks](https://github.com/dpreussler/mockitoid) (mockito mocks with some enhancements) if available  else simple [mockito](https://github.com/mockito/mockito) mocks.
  * It will look into parent classes too.
  * It will ignore fields that already have a value.
  * It is not bound to Butterknife, it does not check for annotations and is not looking into your layouts.
@@ -65,7 +65,8 @@ License
 -------
 
     Copyright 2016 Danny Preussler
-    Uses SuperReflect based on jOOR, 2011-2013, Lukas Eder, lukas.eder@gmail.com
+    Uses SuperReflect https://github.com/dpreussler/SuperReflect
+    based on jOOR, 2011-2013, Lukas Eder, lukas.eder@gmail.com
 
     Both licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
