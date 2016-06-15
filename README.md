@@ -9,7 +9,6 @@ Diacetyl
 
  ![logo](https://cloud.githubusercontent.com/assets/2426606/16071545/470c5524-32dc-11e6-941b-efbcbc4119ff.jpg)
 
-
  It adds artifical butterflavor to your [Butterknife](https://github.com/JakeWharton/butterknife) in test environments.
  When running unit tests you don't need to run Butterknife or similar as this
  might need real views which leads to the use of Robolectric or similar.
@@ -69,7 +68,10 @@ Todo
 License
 -------
 
-    Copyright 2016 Danny Preussler
+    Pam Cooking Spray Image, copyright Mike Mozart, CC by 2.0, https://www.flickr.com/photos/jeepersmedia/15203456322
+
+
+    Libray Copyright 2016 Danny Preussler
     Uses SuperReflect https://github.com/dpreussler/SuperReflect
     based on jOOR, 2011-2013, Lukas Eder, lukas.eder@gmail.com
 
